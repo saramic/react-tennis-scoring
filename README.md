@@ -1,3 +1,27 @@
+# React Tennis
+
+a quick play with friends and react.
+
+![React Tennis demo](public/react_tennis_demo.gif)
+
+## Get started
+
+```
+yarn start
+yarn test
+```
+
+## TODO
+
+- [ ] allow the srever to score some points
+- [ ] make the page look nicer
+- [ ] allow the receiver to score points
+- [ ] complete the scoring to deuce and advantage points
+
+---
+
+## Original
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
