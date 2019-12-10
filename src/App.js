@@ -6,6 +6,7 @@ function App() {
   return (
     <div>
       <div data-testid="score">love all</div>
+      <button data-testid="server-button">Server</button>
     </div>
   );
 }
