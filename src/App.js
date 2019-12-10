@@ -7,8 +7,10 @@ function App() {
   const handleClick = () => {
     if (score === "love all") {
       setScore("15 love");
-    } else {
+    } else if (score === "15 love") {
       setScore("30 love");
+    } else {
+      setScore("40 love");
     }
   };
 
