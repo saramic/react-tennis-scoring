@@ -5,7 +5,11 @@ function App() {
   const [score, setScore] = useState("love all");
 
   const handleClick = () => {
-    setScore("15 love");
+    if (score === "love all") {
+      setScore("15 love");
+    } else {
+      setScore("30 love");
+    }
   };
 
   return (
