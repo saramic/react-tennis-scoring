@@ -7,6 +7,7 @@ function App() {
     <div>
       <div data-testid="score">love all</div>
       <button data-testid="server-button">Server</button>
+      <button data-testid="receiver-button">Receiver</button>
     </div>
   );
 }

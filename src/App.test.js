@@ -14,3 +14,10 @@ test("renders the Server button", () => {
   expect(serverButtonElement.textContent).toEqual("Server");
   // TODO how do we test it's a button? or just click it
 });
+
+test("renders the Receiver button", () => {
+  const { getByTestId } = render(<App />);
+  const receiverButtonElement = getByTestId("receiver-button");
+  expect(receiverButtonElement.textContent).toEqual("Receiver");
+  // TODO how do we test it's a button? or just click it
+});
