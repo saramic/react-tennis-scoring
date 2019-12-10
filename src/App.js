@@ -14,6 +14,10 @@ function App() {
   useEffect(() => {
     if(SCORES[serverScore] === SCORES[0]) {
       setScore(`${SCORES[serverScore]} all`)
+    } else if (serverScore > 3){
+      setScore(
+        "Game Server"
+      )
     } else {
       setScore(`${SCORES[serverScore]} ${SCORES[0]}`);
     }
