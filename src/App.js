@@ -6,9 +6,15 @@ const SCORES = ["love", 15, 30, 40];
 function App() {
   const [score, setScore] = useState("love all");
   const [serverScore, setServerScore] = useState(0);
+  const [receiverScore, setReceiverScore] = useState(0);
 
-  const handleClick = () => {
+
+  const handleServerClick = () => {
     setServerScore(serverScore + 1);
+  };
+
+  const handleReceiverClick = () => {
+    setReceiverScore(receiverScore + 1);
   };
 
   useEffect(() => {
@@ -20,6 +26,16 @@ function App() {
       setScore(`${SCORES[serverScore]} ${SCORES[0]}`);
     }
   }, [serverScore]);
+
+  useEffect(() => {
+    if (SCORES[receiverScore] === SCORES[0]) {
+      setScore(`${SCORES[receiverScore]} all`);
+    } else if (receiverScore > 3) {
+      setScore("Game Server");
+    } else {
+      setScore(`${SCORES[0]} ${SCORES[receiverScore]}`);
+    }
+  }, [receiverScore]);
 
   return (
     <div className="container">
@@ -35,7 +51,7 @@ function App() {
           <button
             type="button"
             className="btn btn-primary btn-block"
-            onClick={handleClick}
+            onClick={handleServerClick}
             data-testid="server-button"
           >
             Server
@@ -45,6 +61,7 @@ function App() {
           <button
             type="button"
             className="btn btn-primary btn-block"
+            onClick={handleReceiverClick}
             data-testid="receiver-button"
           >
             Receiver
