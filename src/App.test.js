@@ -35,5 +35,15 @@ test("clicking receiver scores goes from love all, 15, 30, 40 love", () => {
   fireEvent.click(getByTestId("receiver-button"));
   expect(scoreElement.textContent).toEqual("love 40");
   fireEvent.click(getByTestId("receiver-button"));
-  expect(scoreElement.textContent).toEqual("Game Server");
+  expect(scoreElement.textContent).toEqual("Game Receiver");
 });
+
+// scoring
+// love all
+// 15 love - if server wins
+// 15 all  - if receiver matches
+// 15 30     if receiver wins another
+// 40 all is actually deuce
+// win by 2 points
+// advantage server
+// game server

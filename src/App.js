@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
+import Player from "./components/Player/Player";
 
 const SCORES = ["love", 15, 30, 40];
 
@@ -7,7 +8,6 @@ function App() {
   const [score, setScore] = useState("love all");
   const [serverScore, setServerScore] = useState(0);
   const [receiverScore, setReceiverScore] = useState(0);
-
 
   const handleServerClick = () => {
     setServerScore(serverScore + 1);
@@ -31,7 +31,7 @@ function App() {
     if (SCORES[receiverScore] === SCORES[0]) {
       setScore(`${SCORES[receiverScore]} all`);
     } else if (receiverScore > 3) {
-      setScore("Game Server");
+      setScore("Game Receiver");
     } else {
       setScore(`${SCORES[0]} ${SCORES[receiverScore]}`);
     }
@@ -48,24 +48,18 @@ function App() {
       <div className="row">
         <div className="col-4"></div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-primary btn-block"
-            onClick={handleServerClick}
-            data-testid="server-button"
-          >
-            Server
-          </button>
+          <Player
+            dataTestId="server-button"
+            name="Server"
+            score={handleServerClick}
+          />
         </div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-primary btn-block"
-            onClick={handleReceiverClick}
-            data-testid="receiver-button"
-          >
-            Receiver
-          </button>
+          <Player
+            dataTestId="receiver-button"
+            name="Receiver"
+            score={handleReceiverClick}
+          />
         </div>
       </div>
     </div>
